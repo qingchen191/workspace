@@ -1,0 +1,5 @@
+C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\bin\ChallengeC.dll
+C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\bin\ChallengeC.pdb
+C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\obj\Debug\ChallengeC.dll
+C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\obj\Debug\ChallengeC.pdb
