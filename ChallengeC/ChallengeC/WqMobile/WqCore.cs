@@ -18,10 +18,15 @@ namespace ChallengeC.WqMobile
         private string sha1mac;
         private string urlPre = "http://s2s.adwaken.cn/recommend/getad?";
 
-        // Methods
-        public void clickWQ(int game)
+        public WqCore(GameInfo game)
         {
-            string jsonStr = this.getAdJson(this.urlPre + this.generateParam(game));
+            this.gameInfo = game;
+        }
+
+        // Methods
+        public void clickWQ()
+        {
+            string jsonStr = this.getAdJson(this.urlPre + this.generateParam());
             List<string> adUrls = new List<string>();
             AdsJsonModel jsonAds = new JavaScriptSerializer().Deserialize<AdsJsonModel>(jsonStr);
             string viewUrl = "";
@@ -48,7 +53,7 @@ namespace ChallengeC.WqMobile
             string newIP = GenerateMethod.getIP();
             this.viewWQ(viewUrl, newIP);
             Random sleepRand = new Random();
-            Thread.Sleep(sleepRand.Next(0x2710, 0x7530));
+            Thread.Sleep(sleepRand.Next(1000, 4000));
             this.clickWQ(clickUrlList, newIP);
         }
 
@@ -69,7 +74,7 @@ namespace ChallengeC.WqMobile
             bll.SaveWq(wq);
             if (clickRandom.Next(4) == 1)
             {
-                Thread.Sleep(clickRandom.Next(0xbb8, 0x1f40));
+                Thread.Sleep(clickRandom.Next(3000, 6000));
                 int secondIndex = 0;
                 if (clickIndex == 0)
                 {
@@ -91,12 +96,11 @@ namespace ChallengeC.WqMobile
             }
         }
 
-        private string generateParam(int gameNo)
+        private string generateParam()
         {
             Random rand = new Random();
             CPUModel cpu = Constant.cpus[rand.Next(Constant.cpus.Length)];
             Carrier carr = new Carrier();
-            this.gameInfo = Constant.games[gameNo];
             Device dev = Constant.devices[rand.Next(Constant.devices.Length)];
             this.mac = GenerateMethod.getMac();
             this.sha1mac = GenerateMethod.sha1Mac(this.mac);
@@ -151,9 +155,9 @@ namespace ChallengeC.WqMobile
             return strHTML;
         }
 
-        public void viewWQ(int game)
+        public void viewWQ()
         {
-            string jsonStr = this.getAdJson(this.urlPre + this.generateParam(game));
+            string jsonStr = this.getAdJson(this.urlPre + this.generateParam());
             List<string> adUrls = new List<string>();
             AdsJsonModel jsonAds = new JavaScriptSerializer().Deserialize<AdsJsonModel>(jsonStr);
             string viewUrl = "";

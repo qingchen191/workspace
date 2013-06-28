@@ -17,6 +17,17 @@ namespace ChallengeC.WqMobile
             Appid = _appid;
             AsAdid = _asAdid;
         }
+        public GameInfo(WqgameModel gameModel)
+        {
+            Pnam = gameModel.name;
+            Key = gameModel.key;
+            AsId = gameModel.asid;
+            Pkg = gameModel.pkg;
+            Ppv = gameModel.ppv;
+            Appid = gameModel.appid;
+            AsAdid = gameModel.asadid;
+        }
+
         private string pnam;
         private string key;
         private string asId;
