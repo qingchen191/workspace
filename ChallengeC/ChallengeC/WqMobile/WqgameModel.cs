@@ -18,6 +18,8 @@ namespace ChallengeC.WqMobile
         public string appid { get; set; }
         public string asadid { get; set; }
         public string user_name { get; set; }
+        public int rate { get; set; }
+        public int interval { get; set; }
 
 
         public WqgameModel(MySqlDataReader dr)
@@ -31,6 +33,8 @@ namespace ChallengeC.WqMobile
             this.appid = PublicMethod.GetString(dr["appid"]);
             this.asadid = PublicMethod.GetString(dr["asadid"]);
             this.user_name = PublicMethod.GetString(dr["user_name"]);
+            this.rate = PublicMethod.GetInt(dr["rate"]);
+            this.interval = PublicMethod.GetInt(dr["interval"]);
         }
     }
 }

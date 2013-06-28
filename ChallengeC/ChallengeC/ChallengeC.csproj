@@ -62,6 +62,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="js\jqm\images\ajax-loader.gif" />
@@ -99,6 +100,9 @@
     <Compile Include="common\PublicMethod.cs" />
     <Compile Include="common\StringHelper.cs" />
     <Compile Include="common\UploadHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,6 +120,16 @@
     <Compile Include="WqMobile\GameInfo.cs" />
     <Compile Include="WqMobile\GenerateMethod.cs" />
     <Compile Include="WqMobile\Constant.cs" />
+    <Compile Include="WqMobile\ThreadlogBll.cs" />
+    <Compile Include="WqMobile\ThreadlogModel.cs" />
+    <Compile Include="WqMobile\UtilMethod.cs" />
+    <Compile Include="WqMobile\WqconfBll.cs" />
+    <Compile Include="WqMobile\WqconfModel.cs" />
+    <Compile Include="WqMobile\WqCore.cs" />
+    <Compile Include="WqMobile\WqgameBll.cs" />
+    <Compile Include="WqMobile\WqgameModel.cs" />
+    <Compile Include="WqMobile\WqtabBll.cs" />
+    <Compile Include="WqMobile\WqtabModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

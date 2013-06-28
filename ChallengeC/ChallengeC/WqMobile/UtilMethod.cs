@@ -36,7 +36,7 @@ namespace ChallengeC.WqMobile
             SaveLog("refresh", outputString != null ? outputString.Substring(0, 80) : "refresh failed!");
         }
 
-        public static int GetBaseRateByHour()
+        public static int GetBaseRateByHour(int interval)
         {
 
             int nowHour = DateTime.Now.Hour;
@@ -121,17 +121,17 @@ namespace ChallengeC.WqMobile
                     clickRate = 3;
                     break;
             }
-            return viewRate;
+            return viewRate + interval;
         }
 
-        public static void DealGame(string gameName)
+        public static void DealGame(string gameName, int interval)
         {
             WqgameBll gameBll = new WqgameBll();
             WqgameModel game = gameBll.GetModelByName(gameName);
             WqCore bll = new WqCore(new GameInfo(game));
             Random rand = new Random();
 
-            int baseRate = UtilMethod.GetBaseRateByHour();
+            int baseRate = UtilMethod.GetBaseRateByHour(interval);
 
             if (rand.Next(baseRate) == 1)
             {
