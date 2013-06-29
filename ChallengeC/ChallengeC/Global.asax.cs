@@ -13,8 +13,8 @@ namespace ChallengeC
 {
     public class Global : System.Web.HttpApplication
     {
-        private Timer timer3D;
-        private List<Timer> timers;
+        //private Timer timer3D;
+        private List<Timer> timers = new List<Timer>();
         private List<WqgameModel> gameList;
 
         protected void Application_Start(object sender, EventArgs e)
@@ -26,12 +26,19 @@ namespace ChallengeC
 
             foreach (WqgameModel game in gameList)
             {
-                Timer timer = new Timer(game.interval * 1000);
-                timer.Elapsed += delegate { DealGame(game.name, game.rate); };
+                //Timer timer = new Timer(game.interval * 1000);
+                //timer.Elapsed += delegate { DealGame(game.name, game.rate); };
+
+                TaskTimer timer = new TaskTimer();
+                timer.Interval = game.interval * 1000;
+                timer.GameName = game.name;
+                timer.Elapsed += new ElapsedEventHandler(TimerEvent);
+                timer.Rate = game.rate;
                 timer.AutoReset = true;
                 timer.Enabled = true;
                 timer.Start();
-                UtilMethod.SaveLog("timerStart", game.name + "'s timer started.");
+                
+                UtilMethod.SaveLog("timerStart", game.name + "'s timer started. interval:" + game.interval);
                 timers.Add(timer);
             }
 
@@ -76,12 +83,22 @@ namespace ChallengeC
         {
             UtilMethod.SaveLog("appEnd", "Application end.");
 
-            if (this.timer3D != null)
+            foreach (Timer timer in timers)
             {
-                this.timer3D.Enabled = false;
-                this.timer3D.Stop();
-                this.timer3D.Close();
+                if (timer != null)
+                {
+                    timer.Enabled = false;
+                    timer.Stop();
+                    timer.Close();
+                }
             }
+
+            //if (this.timer3D != null)
+            //{
+            //    this.timer3D.Enabled = false;
+            //    this.timer3D.Stop();
+            //    this.timer3D.Close();
+            //}
             UtilMethod.RefreshApp();
         }
 
@@ -90,12 +107,23 @@ namespace ChallengeC
         //    UtilMethod.DealGame("%C4%90ua Phi Thuy%E1%BB%81n 3D");
         //}
 
-
-        public void DealGame(string gameName, int interval)
+        /// <summary>
+        /// timer  Elapsed事件的处理方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void TimerEvent(object sender, System.Timers.ElapsedEventArgs e)
         {
-            UtilMethod.SaveLog("timerElapsed", gameName + " is dealed. interval is " + interval);
-            UtilMethod.DealGame(gameName, interval);
+            //Console.WriteLine("DllTwo:" + DateTime.Now.ToString());
+            TaskTimer tt = (TaskTimer)sender;
+            UtilMethod.DealGame(tt.GameName, tt.Rate);
         }
+
+        //public void DealGame(string gameName, int interval)
+        //{
+        //    UtilMethod.SaveLog("timerElapsed", gameName + " is dealed. interval is " + interval);
+        //    UtilMethod.DealGame(gameName, interval);
+        //}
 
     }
 }

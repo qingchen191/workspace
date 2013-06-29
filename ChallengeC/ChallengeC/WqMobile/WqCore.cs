@@ -50,6 +50,10 @@ namespace ChallengeC.WqMobile
                     }
                 }
             }
+            else
+            {
+                return;
+            }
             string newIP = GenerateMethod.getIP();
             this.viewWQ(viewUrl, newIP);
             Random sleepRand = new Random();
@@ -59,6 +63,8 @@ namespace ChallengeC.WqMobile
 
         private void clickWQ(List<string> clickUrlList, string newIP)
         {
+            if (clickUrlList == null || clickUrlList.Count == 0) return;
+
             Random clickRandom = new Random();
             int clickIndex = clickRandom.Next(clickUrlList.Count);
             string clickUrl = clickUrlList[clickIndex];
@@ -168,25 +174,29 @@ namespace ChallengeC.WqMobile
                 {
                     Beacon viewBeacon = jsonAds.beacons[0];
                     viewUrl = viewBeacon.url;
+                    string newIP = GenerateMethod.getIP();
+                    this.viewWQ(viewUrl, newIP);
                 }
-                if (jsonAds.ads.Count > 0)
-                {
-                    foreach (AdModel ad in jsonAds.ads)
-                    {
-                        if (ad.beacons.Count > 0)
-                        {
-                            Beacon clickBeacon = ad.beacons[0];
-                            clickUrlList.Add(clickBeacon.url);
-                        }
-                    }
-                }
+                //if (jsonAds.ads.Count > 0)
+                //{
+                //    foreach (AdModel ad in jsonAds.ads)
+                //    {
+                //        if (ad.beacons.Count > 0)
+                //        {
+                //            Beacon clickBeacon = ad.beacons[0];
+                //            clickUrlList.Add(clickBeacon.url);
+                //        }
+                //    }
+                //}
             }
-            string newIP = GenerateMethod.getIP();
-            this.viewWQ(viewUrl, newIP);
         }
 
         private void viewWQ(string viewUrl, string newIP)
         {
+            if (viewUrl == null || viewUrl.Equals(""))
+            {
+                return;
+            }
             viewUrl = Regex.Replace(viewUrl, @"(\d+\.\d+\.\d+\.\d+)", newIP);
             string viewRtn = this.getAdJson(viewUrl);
             WqtabModel wq = new WqtabModel();

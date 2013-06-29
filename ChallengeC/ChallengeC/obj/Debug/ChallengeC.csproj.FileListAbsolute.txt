@@ -3,3 +3,8 @@ C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\Challenge
 C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\bin\ChallengeC.pdb
 C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\obj\Debug\ChallengeC.dll
 C:\Users\huangchangbo\documents\visual studio 2010\Projects\ChallengeC\ChallengeC\obj\Debug\ChallengeC.pdb
+E:\asus\github\workspace\ChallengeC\ChallengeC\bin\ChallengeC.dll
+E:\asus\github\workspace\ChallengeC\ChallengeC\bin\ChallengeC.pdb
+E:\asus\github\workspace\ChallengeC\ChallengeC\obj\Debug\ResolveAssemblyReference.cache
+E:\asus\github\workspace\ChallengeC\ChallengeC\obj\Debug\ChallengeC.dll
+E:\asus\github\workspace\ChallengeC\ChallengeC\obj\Debug\ChallengeC.pdb

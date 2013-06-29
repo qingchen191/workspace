@@ -36,111 +36,99 @@ namespace ChallengeC.WqMobile
             SaveLog("refresh", outputString != null ? outputString.Substring(0, 80) : "refresh failed!");
         }
 
-        public static int GetBaseRateByHour(int interval)
+        public static int GetBaseRateByHour()
         {
 
             int nowHour = DateTime.Now.Hour;
-            int viewRate = 2;
-            int clickRate = 3;
+            int viewRate = 6;
             switch (nowHour)
             {
                 case 0:
                 case 1:
                 case 2:
-                    viewRate = 3;
-                    clickRate = 4;
+                    viewRate = 8;
                     break;
 
                 case 3:
                 case 4:
-                    viewRate = 4;
-                    clickRate = 5;
+                    viewRate = 9;
                     break;
 
                 case 5:
                 case 6:
-                    viewRate = 5;
-                    clickRate = 6;
+                    viewRate = 8;
                     break;
 
                 case 7:
                 case 8:
-                    viewRate = 3;
-                    clickRate = 4;
+                    viewRate = 7;
                     break;
 
                 case 9:
                 case 10:
-                    viewRate = 2;
-                    clickRate = 3;
+                    viewRate = 6;
                     break;
 
                 case 11:
                 case 12:
-                    viewRate = 4;
-                    clickRate = 5;
+                    viewRate = 7;
                     break;
 
                 case 13:
                 case 14:
-                    viewRate = 3;
-                    clickRate = 4;
+                    viewRate = 6;
                     break;
 
                 case 15:
                 case 16:
-                    viewRate = 2;
-                    clickRate = 3;
+                    viewRate = 6;
                     break;
 
                 case 17:
                 case 18:
-                    viewRate = 3;
-                    clickRate = 4;
+                    viewRate = 7;
                     break;
 
                 case 19:
                 case 20:
-                    viewRate = 2;
-                    clickRate = 3;
+                    viewRate = 6;
                     break;
 
                 case 21:
                 case 22:
-                    viewRate = 2;
-                    clickRate = 2;
+                    viewRate = 6;
                     break;
 
                 case 23:
-                    viewRate = 2;
-                    clickRate = 3;
+                    viewRate = 6;
                     break;
 
                 default:
-                    viewRate = 2;
-                    clickRate = 3;
+                    viewRate = 7;
                     break;
             }
-            return viewRate + interval;
+            return viewRate;
         }
 
-        public static void DealGame(string gameName, int interval)
+        public static void DealGame(string gameName, int rate)
         {
             WqgameBll gameBll = new WqgameBll();
             WqgameModel game = gameBll.GetModelByName(gameName);
             WqCore bll = new WqCore(new GameInfo(game));
-            Random rand = new Random();
+            Random rand = new Random(DateTime.Now.Millisecond);
 
-            int baseRate = UtilMethod.GetBaseRateByHour(interval);
+            int baseRate = GetBaseRateByHour();
+            UtilMethod.SaveLog("timerElapsed", gameName + " timer is started. rate is " + rate);
 
-            if (rand.Next(baseRate) == 1)
+            if (rand.Next(baseRate + rate) <= 5)
             {
+                Thread.Sleep(rand.Next(100, 1000));
+                UtilMethod.SaveLog("view", gameName + " is viewed.");
                 bll.viewWQ();
             }
-            if (rand.Next(baseRate + 1) == 1)
+            if (rand.Next((baseRate + rate) * 8) <= 7)
             {
-                Random sleepRand = new Random();
-                Thread.Sleep(sleepRand.Next(500, 3000));
+                Thread.Sleep(rand.Next(500, 3000));
                 bll.clickWQ();
             }
 

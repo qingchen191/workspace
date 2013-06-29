@@ -120,6 +120,9 @@
     <Compile Include="WqMobile\GameInfo.cs" />
     <Compile Include="WqMobile\GenerateMethod.cs" />
     <Compile Include="WqMobile\Constant.cs" />
+    <Compile Include="WqMobile\TaskTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WqMobile\ThreadlogBll.cs" />
     <Compile Include="WqMobile\ThreadlogModel.cs" />
     <Compile Include="WqMobile\UtilMethod.cs" />

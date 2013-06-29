@@ -236,5 +236,10 @@ namespace ChallengeC
 
             return strHTML;
         }
+
+        protected void btnSetInterval_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
