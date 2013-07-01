@@ -20,6 +20,7 @@ namespace ChallengeC.WqMobile
         public string user_name { get; set; }
         public int rate { get; set; }
         public int interval { get; set; }
+        public string chnname { get; set; }
 
 
         public WqgameModel(MySqlDataReader dr)
@@ -35,6 +36,7 @@ namespace ChallengeC.WqMobile
             this.user_name = PublicMethod.GetString(dr["user_name"]);
             this.rate = PublicMethod.GetInt(dr["rate"]);
             this.interval = PublicMethod.GetInt(dr["interval"]);
+            this.chnname = PublicMethod.GetString(dr["chnname"]);
         }
     }
 }

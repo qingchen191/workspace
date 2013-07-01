@@ -56,17 +56,17 @@ namespace ChallengeC.WqMobile
 
                 case 5:
                 case 6:
-                    viewRate = 8;
+                    viewRate = 10;
                     break;
 
                 case 7:
                 case 8:
-                    viewRate = 7;
+                    viewRate = 9;
                     break;
 
                 case 9:
                 case 10:
-                    viewRate = 6;
+                    viewRate = 8;
                     break;
 
                 case 11:
@@ -76,12 +76,12 @@ namespace ChallengeC.WqMobile
 
                 case 13:
                 case 14:
-                    viewRate = 6;
+                    viewRate = 7;
                     break;
 
                 case 15:
                 case 16:
-                    viewRate = 6;
+                    viewRate = 7;
                     break;
 
                 case 17:
@@ -90,17 +90,18 @@ namespace ChallengeC.WqMobile
                     break;
 
                 case 19:
-                case 20:
                     viewRate = 6;
                     break;
-
+                case 20:
                 case 21:
+                    viewRate = 5;
+                    break;
+
                 case 22:
                     viewRate = 6;
                     break;
-
                 case 23:
-                    viewRate = 6;
+                    viewRate = 7;
                     break;
 
                 default:
@@ -122,11 +123,17 @@ namespace ChallengeC.WqMobile
 
             if (rand.Next(baseRate + rate) <= 5)
             {
-                Thread.Sleep(rand.Next(100, 1000));
-                UtilMethod.SaveLog("view", gameName + " is viewed.");
+                //UtilMethod.SaveLog("view", gameName + " is viewed.");
                 bll.viewWQ();
+                Thread.Sleep(rand.Next(100, 1000));
+                if (rand.Next(baseRate) <= 1)
+                {
+                    bll.viewWQ();
+                }
             }
-            if (rand.Next((baseRate + rate) * 8) <= 7)
+
+            // 点击频率为1/baseRate
+            if (rand.Next(baseRate + rate) == 1)
             {
                 Thread.Sleep(rand.Next(500, 3000));
                 bll.clickWQ();

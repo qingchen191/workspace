@@ -17,53 +17,42 @@
         }
     </style>
 </head>
-<body style="height: 195px">
+<body style="height: 472px">
     <form id="form1" runat="server">
-
-    
-    <asp:Button ID="Button1" runat="server" onclick="taikong3d_view" 
-        Text="展示太空竞速3D" Width="138px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button2" runat="server" Text="展示PopStar" 
-        onclick="popstar_view" />
-    </br>
-
     <br />
-
-    <asp:Button ID="taikong3d" runat="server" onclick="taikong3d_Click" 
-        Text="下载太空竞速3D" Width="138px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="popstar" runat="server" Text="下载PopStar" 
-        onclick="popstar_Click" />
-    </br>
     <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
-<!--    <p>
-        <asp:TextBox ID="TextBox1" runat="server" Height="89px" TextMode="MultiLine" 
-            Width="800px"></asp:TextBox>
-    </p>
-    <asp:TextBox ID="TextBox2" runat="server" Height="80px" TextMode="MultiLine" 
-        Width="800px"></asp:TextBox>
-    <p>
-        <asp:TextBox ID="TextBox3" runat="server" Height="138px" TextMode="MultiLine" 
-            Width="800px"></asp:TextBox>
-    </p> -->
-
-
-    <div style="height: 79px">
-    
-        <br />
-        <asp:TextBox ID="tbInterval" runat="server" ToolTip="以秒为单位"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnSetInterval" runat="server" Text="设置时间间隔" 
-            onclick="btnSetInterval_Click" />
-        &nbsp;
-        <asp:Label ID="lblMessage" runat="server"></asp:Label>
-        <br />
-        <br />
-    
-    </div>
-
-    
+&nbsp;&nbsp;
+    <asp:Label ID="Label1" runat="server" Text="游戏："></asp:Label>
+    <asp:DropDownList ID="GameList" runat="server" Height="16px" 
+        onselectedindexchanged="GameList_SelectedIndexChanged" Width="118px">
+    </asp:DropDownList>
+    &nbsp;
+<ContentTemplate>  
+&nbsp;&nbsp;
+    <asp:Label ID="Label2" runat="server" Text="日期："></asp:Label>
+        <asp:TextBox ID="requestedDeliveryDateTextBox" runat="server" Width="100" />  
+        <asp:ImageButton id="imageButton" runat="server" 
+            ImageUrl="/Images/calendar.png" AlternateText="calendar" 
+            OnClick="ImageButton_Click" CausesValidation="false" Width="30px" />  
+        &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="查询" 
+        Width="92px" />
+&nbsp;&nbsp;
+    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+        <br />  
+        <div id="calendar" class="calendar" visible="false" runat="server">  
+        <asp:Calendar ID="requestedDeliveryDateCalendar" runat="server" OnSelectionChanged="RequestedDeliveryDateCalendar_SelectionChanged" />  
+        </div>  
+</ContentTemplate>  
+    <asp:Table ID="ViewTable1" runat="server" CellPadding="3" CellSpacing="3" 
+        Height="330px" Width="848px">
+        <asp:TableRow runat="server" Height="20px" TableSection="TableHeader">
+            <asp:TableCell runat="server">游戏名</asp:TableCell>
+            <asp:TableCell runat="server">展示数</asp:TableCell>
+            <asp:TableCell runat="server">点击数</asp:TableCell>
+            <asp:TableCell runat="server">金额</asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
     </form>
 
 

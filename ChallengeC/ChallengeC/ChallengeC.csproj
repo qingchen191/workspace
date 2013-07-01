@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Images\calendar.png" />
     <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="js\jqm\images\ajax-loader.gif" />
@@ -118,6 +119,7 @@
     <Compile Include="WqMobile\CPUModel.cs" />
     <Compile Include="WqMobile\Device.cs" />
     <Compile Include="WqMobile\GameInfo.cs" />
+    <Compile Include="WqMobile\GameInfoModel.cs" />
     <Compile Include="WqMobile\GenerateMethod.cs" />
     <Compile Include="WqMobile\Constant.cs" />
     <Compile Include="WqMobile\TaskTimer.cs">
@@ -133,6 +135,7 @@
     <Compile Include="WqMobile\WqgameModel.cs" />
     <Compile Include="WqMobile\WqtabBll.cs" />
     <Compile Include="WqMobile\WqtabModel.cs" />
+    <Compile Include="WqMobile\WqWebBll.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

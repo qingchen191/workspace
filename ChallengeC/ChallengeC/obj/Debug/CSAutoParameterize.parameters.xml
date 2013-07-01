@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="MySqlStr-Web.config Connection String" description="MySqlStr 应用程序在 web.config 中用来访问数据库的连接字符串。" defaultvalue="Server=203.124.13.186;Database=qingchen_191;Uid=qingchen;Pwd=vancl@123;charset=utf8" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MySqlStr']/@connectionString" />
-  </parameter>
-</parameters>

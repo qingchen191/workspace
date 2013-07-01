@@ -22,6 +22,19 @@ namespace ChallengeC.WqMobile
             }
             return null;
         }
+        public WqgameModel GetModelByChnname(string chnname)
+        {
+            string sql = "select * from wqgames where chnnamename=@chnnamename";
+            MySqlParameter[] para = new MySqlParameter[] { new MySqlParameter("@chnnamename", chnname) };
+            using (MySqlDataReader dr = MySqlHelper.ExecuteReader(ConstValues.connStr, sql, para))
+            {
+                if (dr.Read())
+                {
+                    return new WqgameModel(dr);
+                }
+            }
+            return null;
+        }
 
         public List<WqgameModel> GetModelByUserName(string username)
         {
