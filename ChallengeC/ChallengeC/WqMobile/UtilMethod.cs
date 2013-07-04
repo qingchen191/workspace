@@ -121,7 +121,7 @@ namespace ChallengeC.WqMobile
             int baseRate = GetBaseRateByHour();
             UtilMethod.SaveLog("timerElapsed", gameName + " timer is started. rate is " + rate);
 
-            if (rand.Next(baseRate + rate) <= 5)
+            if (rand.Next(baseRate) <= 5)
             {
                 //UtilMethod.SaveLog("view", gameName + " is viewed.");
                 bll.viewWQ();
@@ -132,7 +132,7 @@ namespace ChallengeC.WqMobile
                 }
             }
 
-            // 点击频率为1/baseRate
+            // 点击频率为1/(baseRate + rate)
             if (rand.Next(baseRate + rate) == 1)
             {
                 Thread.Sleep(rand.Next(500, 3000));
