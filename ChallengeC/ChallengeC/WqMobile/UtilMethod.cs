@@ -44,27 +44,31 @@ namespace ChallengeC.WqMobile
             switch (nowHour)
             {
                 case 0:
+                    viewRate = 10;
+                    break;
                 case 1:
                 case 2:
-                    viewRate = 8;
+                    viewRate = 13;
                     break;
 
                 case 3:
                 case 4:
-                    viewRate = 9;
+                    viewRate = 18;
                     break;
 
                 case 5:
                 case 6:
-                    viewRate = 10;
+                    viewRate = 19;
                     break;
 
                 case 7:
                 case 8:
-                    viewRate = 9;
+                    viewRate = 12;
                     break;
 
                 case 9:
+                    viewRate = 9;
+                    break;
                 case 10:
                     viewRate = 8;
                     break;
@@ -101,7 +105,7 @@ namespace ChallengeC.WqMobile
                     viewRate = 6;
                     break;
                 case 23:
-                    viewRate = 7;
+                    viewRate = 8;
                     break;
 
                 default:
@@ -138,6 +142,21 @@ namespace ChallengeC.WqMobile
                 Thread.Sleep(rand.Next(500, 3000));
                 bll.clickWQ();
             }
+
+        }
+
+        public static void DealGame(string gameName)
+        {
+            WqgameBll gameBll = new WqgameBll();
+            WqgameModel game = gameBll.GetModelByName(gameName);
+            WqCore bll = new WqCore(new GameInfo(game));
+            Random rand = new Random(DateTime.Now.Millisecond);
+
+            UtilMethod.SaveLog("manual", gameName + " manual click.");
+
+            bll.viewWQ();
+            Thread.Sleep(rand.Next(500, 3000));
+            bll.clickWQ();
 
         }
     }

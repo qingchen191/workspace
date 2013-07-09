@@ -27,32 +27,19 @@
         onselectedindexchanged="GameList_SelectedIndexChanged" Width="118px">
     </asp:DropDownList>
     &nbsp;
-<ContentTemplate>  
-&nbsp;&nbsp;
-    <asp:Label ID="Label2" runat="server" Text="日期："></asp:Label>
-        <asp:TextBox ID="requestedDeliveryDateTextBox" runat="server" Width="100" />  
-        <asp:ImageButton id="imageButton" runat="server" 
-            ImageUrl="/Images/calendar.png" AlternateText="calendar" 
-            OnClick="ImageButton_Click" CausesValidation="false" Width="30px" />  
-        &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="查询" 
-        Width="92px" />
-&nbsp;&nbsp;
-    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-        <br />  
-        <div id="calendar" class="calendar" visible="false" runat="server">  
-        <asp:Calendar ID="requestedDeliveryDateCalendar" runat="server" OnSelectionChanged="RequestedDeliveryDateCalendar_SelectionChanged" />  
-        </div>  
-</ContentTemplate>  
-    <asp:Table ID="ViewTable1" runat="server" CellPadding="3" CellSpacing="3" 
-        Height="330px" Width="848px">
-        <asp:TableRow runat="server" Height="20px" TableSection="TableHeader">
-            <asp:TableCell runat="server">游戏名</asp:TableCell>
-            <asp:TableCell runat="server">展示数</asp:TableCell>
-            <asp:TableCell runat="server">点击数</asp:TableCell>
-            <asp:TableCell runat="server">金额</asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
+
+    <br />
+    <br />
+    <br />
+&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnDiaoyudao" runat="server" Height="30px" 
+        onclick="btnDiaoyudao_Click" Text="保卫钓鱼岛" Width="100px" />
+&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnFkmt" runat="server" Height="30px" onclick="btnFkmt_Click" 
+        Text="疯狂摩托" Width="100px" />
+&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnJjmt" runat="server" Height="30px" onclick="btnJjmt_Click" 
+        Text="竞技摩托" Width="100px" />
     </form>
 
 

@@ -38,7 +38,7 @@ namespace ChallengeC
             GameList.Items.Add("疯狂摩托");
             GameList.Items.Add("竞技摩托");
 
-            requestedDeliveryDateTextBox.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
+            //requestedDeliveryDateTextBox.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
 
         }
 
@@ -47,58 +47,73 @@ namespace ChallengeC
 
         }
 
-        /// <summary>  
-        /// 日期选择图标被点击  
-        /// </summary>  
-        protected void ImageButton_Click(object sender, EventArgs eventArgs)  
-       {  
-           //控制日历的显示与隐藏  
-           calendar.Visible = !calendar.Visible;  
-       }
-
-        /// <summary>  
-        /// 选择日期，通过AJAX触发  
-        /// </summary>  
-        protected void RequestedDeliveryDateCalendar_SelectionChanged(object sender, EventArgs eventArgs)
+        protected void btnDiaoyudao_Click(object sender, EventArgs e)
         {
-            requestedDeliveryDateTextBox.Text = requestedDeliveryDateCalendar.SelectedDate.ToString("yyyy-MM-dd");
-
-            // 隐藏日历  
-            calendar.Visible = false;
-
-            //设置日历下textbox的焦点，方便用户输入。移除或改变下行代码设置为您自己的控件  
-            //someTextBox.Focus();
+            UtilMethod.DealGame("%E4%BF%9D%E5%8D%AB%E9%92%93%E9%B1%BC%E5%B2%9B");
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnFkmt_Click(object sender, EventArgs e)
         {
-            Label3.Text = GameList.SelectedValue + "|" + requestedDeliveryDateTextBox.Text;
-            string gameName = GameList.SelectedValue;
-            WqWebBll webBll = new WqWebBll();
-            List<GameInfoModel> gameInfoList = webBll.GetGamesInfo(requestedDeliveryDateTextBox.Text, GameList.SelectedValue);
+            UtilMethod.DealGame("Trial Xtreme 2 HD");
+        }
 
-            foreach (GameInfoModel info in gameInfoList)
-            {
-                TableRow row = new TableRow();
-                TableCell cellgame = new TableCell();
-                cellgame.Text = info.game;
-                row.Cells.Add(cellgame);
+        protected void btnJjmt_Click(object sender, EventArgs e)
+        {
+            UtilMethod.DealGame("%E7%AB%9E%E6%8A%80%E6%91%A9%E6%89%98");
+        }
 
-                TableCell viewcnt = new TableCell();
-                viewcnt.Text = info.viewcnt.ToString();
-                row.Cells.Add(viewcnt);
+       // /// <summary>  
+       // /// 日期选择图标被点击  
+       // /// </summary>  
+       // protected void ImageButton_Click(object sender, EventArgs eventArgs)  
+       //{  
+       //    //控制日历的显示与隐藏  
+       //    calendar.Visible = !calendar.Visible;  
+       //}
 
-                TableCell clickcnt = new TableCell();
-                clickcnt.Text = info.clickcnt.ToString();
-                row.Cells.Add(clickcnt);
+       // /// <summary>  
+       // /// 选择日期，通过AJAX触发  
+       // /// </summary>  
+       // protected void RequestedDeliveryDateCalendar_SelectionChanged(object sender, EventArgs eventArgs)
+       // {
+       //     requestedDeliveryDateTextBox.Text = requestedDeliveryDateCalendar.SelectedDate.ToString("yyyy-MM-dd");
 
-                TableCell amount = new TableCell();
-                amount.Text = info.amount.ToString();
-                row.Cells.Add(amount);
+       //     // 隐藏日历  
+       //     calendar.Visible = false;
 
-                ViewTable1.Rows.Add(row);
-            }
-        }  
+       //     //设置日历下textbox的焦点，方便用户输入。移除或改变下行代码设置为您自己的控件  
+       //     //someTextBox.Focus();
+       // }
+
+       // protected void Button1_Click(object sender, EventArgs e)
+       // {
+       //     Label3.Text = GameList.SelectedValue + "|" + requestedDeliveryDateTextBox.Text;
+       //     string gameName = GameList.SelectedValue;
+       //     WqWebBll webBll = new WqWebBll();
+       //     List<GameInfoModel> gameInfoList = webBll.GetGamesInfo(requestedDeliveryDateTextBox.Text, GameList.SelectedValue);
+
+       //     foreach (GameInfoModel info in gameInfoList)
+       //     {
+       //         TableRow row = new TableRow();
+       //         TableCell cellgame = new TableCell();
+       //         cellgame.Text = info.game;
+       //         row.Cells.Add(cellgame);
+
+       //         TableCell viewcnt = new TableCell();
+       //         viewcnt.Text = info.viewcnt.ToString();
+       //         row.Cells.Add(viewcnt);
+
+       //         TableCell clickcnt = new TableCell();
+       //         clickcnt.Text = info.clickcnt.ToString();
+       //         row.Cells.Add(clickcnt);
+
+       //         TableCell amount = new TableCell();
+       //         amount.Text = info.amount.ToString();
+       //         row.Cells.Add(amount);
+
+       //         ViewTable1.Rows.Add(row);
+       //     }
+       // }  
 
         #region old
         //private void viewWQ(int game)

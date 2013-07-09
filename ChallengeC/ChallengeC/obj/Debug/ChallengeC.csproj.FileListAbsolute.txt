@@ -8,3 +8,5 @@ E:\asus\github\workspace\ChallengeC\ChallengeC\bin\ChallengeC.pdb
 E:\asus\github\workspace\ChallengeC\ChallengeC\obj\Debug\ResolveAssemblyReference.cache
 E:\asus\github\workspace\ChallengeC\ChallengeC\obj\Debug\ChallengeC.dll
 E:\asus\github\workspace\ChallengeC\ChallengeC\obj\Debug\ChallengeC.pdb
+E:\asus\github\workspace\ChallengeC\ChallengeC\bin\MySql.Data.dll
+E:\asus\github\workspace\ChallengeC\ChallengeC\bin\MySql.Data.Entity.dll

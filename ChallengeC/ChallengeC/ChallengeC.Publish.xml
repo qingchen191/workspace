@@ -2,14 +2,16 @@
 <publishData>
   <publishProfile publishUrl="E:\asus\HTML5\challengec" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="MQingchen191" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="qingchen" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5JHATRt4206vt4NyWL3HxAAAAAACAAAAAAAQZgAAAAEAACAAAABz5PYPoNW52M+os9uXB4eIO66ZaqG7WGllbI3wmCSrigAAAAAOgAAAAAIAACAAAADYVog0robbyFPLGfX5RVoVDfkU+XLB4+wPaAeLE5IM8SAAAACzLcJLCk+SFTsf4VHo0yygs6W+mRSQy6fMl0mKrEfZuEAAAAAmOGDw8wxf3t2bgIosXm72znPOGQ6tZnmCzm8vqmxkJTAPNNas4n/ur5svwpecXg50mG3XHcvaCWQi9EhSkXGo" SelectedForPublish="True">
     <file relUrl="js/jqm/images/icons-18-white.png" publishTime="05/27/2013 18:22:20" />
+    <file relUrl="bin/MySql.Data.Entity.dll" publishTime="06/13/2013 02:24:56" />
     <file relUrl="js/jqm/images/icons-18-black.png" publishTime="05/27/2013 18:22:20" />
-    <file relUrl="bin/ChallengeC.pdb" publishTime="07/03/2013 18:34:05" />
+    <file relUrl="bin/MySql.Data.dll" publishTime="06/13/2013 02:24:56" />
+    <file relUrl="bin/ChallengeC.pdb" publishTime="07/09/2013 20:34:59" />
     <file relUrl="js/jqm/jquery-1.9.1.min.js" publishTime="05/27/2013 18:22:01" />
     <file relUrl="js/jqm/jquery.mobile.theme-1.3.1.min.css" publishTime="05/27/2013 18:22:02" />
     <file relUrl="ajax/Login.ashx" publishTime="05/27/2013 14:23:53" />
-    <file relUrl="Web.config" publishTime="07/01/2013 13:45:17" />
+    <file relUrl="Web.config" publishTime="07/09/2013 20:35:00" />
     <file relUrl="ajax/register.ashx" publishTime="05/29/2013 20:10:29" />
-    <file relUrl="bin/ChallengeC.dll" publishTime="07/03/2013 18:34:06" />
+    <file relUrl="bin/ChallengeC.dll" publishTime="07/09/2013 20:34:59" />
     <file relUrl="js/jqm/jquery.mobile.structure-1.3.1.min.css" publishTime="05/27/2013 18:22:02" />
     <file relUrl="js/jqm/jquery.mobile-1.3.1.min.js" publishTime="05/27/2013 18:22:02" />
     <file relUrl="index.html" publishTime="05/29/2013 17:14:46" />
@@ -19,6 +21,6 @@
     <file relUrl="js/jqm/images/icons-36-white.png" publishTime="05/27/2013 18:22:20" />
     <file relUrl="Images/calendar.png" publishTime="07/01/2013 11:34:04" />
     <file relUrl="js/jqm/images/ajax-loader.gif" publishTime="05/27/2013 18:22:20" />
-    <file relUrl="index.aspx" publishTime="07/01/2013 22:10:05" />
+    <file relUrl="index.aspx" publishTime="07/04/2013 13:10:41" />
   </publishProfile>
 </publishData>

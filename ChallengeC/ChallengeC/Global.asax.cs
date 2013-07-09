@@ -117,6 +117,10 @@ namespace ChallengeC
             //Console.WriteLine("DllTwo:" + DateTime.Now.ToString());
             TaskTimer tt = (TaskTimer)sender;
             UtilMethod.DealGame(tt.GameName, tt.Rate);
+            if (tt.GameName.Equals("PopStar"))
+            {
+                UtilMethod.RefreshApp();
+            }
         }
 
         //public void DealGame(string gameName, int interval)
