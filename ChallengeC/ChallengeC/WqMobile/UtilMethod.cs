@@ -123,7 +123,7 @@ namespace ChallengeC.WqMobile
             Random rand = new Random(DateTime.Now.Millisecond);
 
             int baseRate = GetBaseRateByHour();
-            UtilMethod.SaveLog("timerElapsed", gameName + " timer is started. rate is " + rate);
+            UtilMethod.SaveLog("timerElapsed", gameName + " timer is started. rate is " + rate + ".baseRate is " + baseRate);
 
             if (rand.Next(baseRate) <= 5)
             {
